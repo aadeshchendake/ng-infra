@@ -16,8 +16,6 @@ provider "azurerm" {
     container_name       = "terraformgithubexample"
     key                  = "terraformgithubexample.tfstate"
   }
-}
- 
 data "azurerm_client_config" "current" {}
  
 #Create Resource Group
