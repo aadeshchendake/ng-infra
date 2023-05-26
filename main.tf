@@ -5,7 +5,7 @@ terraform {
     container_name       = "terraformgithubexample"
     key                  = "terraformgithubexample.tfstatefile"
   }
- }
+}
  
 provider "azurerm" {
   # The "feature" block is required for AzureRM provider 2.x.
