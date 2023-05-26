@@ -23,7 +23,7 @@ resource "azurerm_resource_group" "aadeshrg" {
 }
 
 #Create Virtual Network
-resource "azurerm_virtual_network" "vnet" {
+resource "azurerm_virtual_network" "aadeshvnet" {
   name                = "aadeshvnet"
   address_space       = ["192.168.0.0/16"]
   location            = "eastus2"
