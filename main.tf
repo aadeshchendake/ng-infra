@@ -5,7 +5,7 @@ terraform {
     container_name       = "terraformgithubexample"
     key                  = "terraformgithubexample.tfstatefile"
   }
-}
+ }
  
 provider "azurerm" {
   # The "feature" block is required for AzureRM provider 2.x.
@@ -18,13 +18,13 @@ data "azurerm_client_config" "current" {}
  
 #Create Resource Group
 resource "azurerm_resource_group" "aadeshrg" {
-  name     = "tamops"
+  name     = "aadeshrg"
   location = "eastus2"
 }
  
 #Create Virtual Network
 resource "azurerm_virtual_network" "vnet" {
-  name                = "tamops-vnet"
+  name                = "aadeshvnet"
   address_space       = ["192.168.0.0/16"]
   location            = "eastus2"
   resource_group_name = azurerm_resource_group.aadeshrg.name
@@ -32,8 +32,8 @@ resource "azurerm_virtual_network" "vnet" {
  
 # Create Subnet
 resource "azurerm_subnet" "subnet" {
-  name                 = "subnet"
+  name                 = "aadeshsubnet"
   resource_group_name  = azurerm_resource_group.aadeshrg.name
-  virtual_network_name = azurerm_virtual_network.vnet.name
+  virtual_network_name = azurerm_virtual_network.aadeshvnet.name
   address_prefix       = "192.168.0.0/24"
 }
